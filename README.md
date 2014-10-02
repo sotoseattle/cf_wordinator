@@ -27,6 +27,6 @@ Detect if two words are anagrammatically analogous!
 
 ```text
 input as path => '/anagram/silent/listen'
-json response => {"answer":true}
+json response => {"anagram?":true}
 ```
 

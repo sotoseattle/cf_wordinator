@@ -8,26 +8,16 @@ end
 
 helpers do
   def anagram?(word1, word2)
-    return false if word1.size!=word2.size
-
-    h = Hash.new(0)
-    word1.split('').each { |c| h[c] += 1 }
-    word2.split('').each do |c|
-      if h.has_key?(c)
-        h[c] -= 1
-      else
-        return false
-      end
-    end
-    h.values.all? { |v| v == 0 }
+    word1.split('').sort == word2.split('').sort
   end
 end
-
 
 get '/' do
   "Hola Caracola! Hola Carachocho!"
 end
 
 get '/anagram/:word1/:word2' do
-  json :anagram? => anagram?(params[:word1], params[:word2])
+  json word1: params[:word1],
+       word2: params[:word2],
+       anagram?: anagram?(params[:word1], params[:word2])
 end

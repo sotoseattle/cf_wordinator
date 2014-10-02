@@ -1,7 +1,7 @@
 require 'rake/testtask'
 
 Rake::TestTask.new do |t|
-  t.pattern = "specs/**/*_spec.rb"
+  t.pattern = 'specs/**/*_spec.rb'
 end
 
 task default: 'test'

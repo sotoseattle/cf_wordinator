@@ -29,5 +29,5 @@ get '/' do
 end
 
 get '/anagram/:word1/:word2' do
-  json :answer => anagram?(params[:word1], params[:word2])
+  json :anagram? => anagram?(params[:word1], params[:word2])
 end

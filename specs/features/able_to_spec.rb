@@ -10,22 +10,32 @@ describe 'Wordinator' do
   describe '#anagram' do
     it 'should detect when a word is an anagram' do
       get '/anagram/silent/listen'
-      JSON.parse(last_response.body)['answer'].must_equal true
+      JSON.parse(last_response.body)['anagram?'].must_equal true
     end
 
     it 'should detect when a word is an anagram' do
       get '/anagram/aaabbb/ababab'
-      JSON.parse(last_response.body)['answer'].must_equal true
+      JSON.parse(last_response.body)['anagram?'].must_equal true
     end
 
     it 'should detect when a word is not an anagram' do
       get '/anagram/silent/listQn'
-      JSON.parse(last_response.body)['answer'].must_equal false
+      JSON.parse(last_response.body)['anagram?'].must_equal false
     end
 
     it 'should detect when a word is not an anagram' do
       get '/anagram/silent/listn'
-      JSON.parse(last_response.body)['answer'].must_equal false
+      JSON.parse(last_response.body)['anagram?'].must_equal false
+    end
+  end
+
+  describe '#generate_crappy_password' do
+    it 'should convert a word to a crappy password' do
+
+    end
+
+    it 'if it cannot change the word it returns nil' do
+
     end
   end
 end

@@ -38,7 +38,7 @@ get '/crappy_password/:word' do
 end
 
 not_found do
-  json error: 'bad url, check your arguments'
+  json error: 'bad url'
 end
 
 error do

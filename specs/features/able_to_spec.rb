@@ -26,7 +26,7 @@ describe 'Wordinator' do
     end
 
     it 'should detect when a word is not an anagram' do
-      get '/anagram/silent/listQn'
+      get '/anagram/silent/listqn'
       JSON.parse(last_response.body)['anagram?'].must_equal false
     end
 
@@ -46,6 +46,13 @@ describe 'Wordinator' do
       get '/crappy_password/juan'
       JSON.parse(last_response.body)['crappy_pass'].must_equal nil
       JSON.parse(last_response.body)['why_error'].must_equal 'nothing changed in crappyfication'
+    end
+  end
+
+  describe 'Errors' do
+    it 'routes to 404 bad urls' do
+      get '/anagram/23489'
+      last_response.status.must_equal 404
     end
   end
 end

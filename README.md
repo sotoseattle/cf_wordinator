@@ -15,10 +15,8 @@ Only accepts words (no spaces, a-z) and no upcase.
 
 - clone from github
 - bundle install
-- execute wordinator
-```$ ruby wordinator.rb```
-- use browser to the indicated port
-```http://localhost:4567/anagram/silent/listen```
+- execute wordinator => $ ruby wordinator.rb
+- use browser to the indicated port => http://localhost:4567/anagram/silent/listen
 - or use any other means to access the service (curl, wget, etc.)
 
 ### Functionality

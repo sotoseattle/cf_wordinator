@@ -1,4 +1,4 @@
-require File.expand_path '../../spec_helper.rb', __FILE__
+require File.expand_path '../spec_helper.rb', __FILE__
 
 describe 'Wordinator' do
   it 'should successfully return a greeting from root' do
@@ -45,7 +45,7 @@ describe 'Wordinator' do
     it 'if it cannot change the word it returns nil' do
       get '/crappy_password/juan'
       JSON.parse(last_response.body)['crappy_pass'].must_equal nil
-      JSON.parse(last_response.body)['why_error'].must_equal 'nothing changed in crappyfication'
+      JSON.parse(last_response.body)['why_error'].must_equal 'no changes made'
     end
   end
 

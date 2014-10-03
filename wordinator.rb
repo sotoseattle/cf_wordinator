@@ -31,7 +31,7 @@ end
 get '/crappy_password/:word' do
   pass = crappify(params[:word])
   if pass == params[:word]
-    json crappy_pass: nil, why_error: 'nothing changed in crappyfication'
+    json crappy_pass: nil, why_error: 'no changes made'
   else
     json crappy_pass: pass
   end
